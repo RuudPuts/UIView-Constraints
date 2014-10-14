@@ -44,5 +44,17 @@
  *  @return NSLayoutContstraint when found, nil otherwise
  */
 - (NSLayoutConstraint *)heightConstraint;
+/**
+ *  Searches the center X NSLayoutConstraint of the view
+ *
+ *  @return NSLayoutContstraint when found, nil otherwise
+ */
+- (NSLayoutConstraint *)centerXConstraint;
+/**
+ *  Searches the center Y NSLayoutConstraint of the view
+ *
+ *  @return NSLayoutContstraint when found, nil otherwise
+ */
+- (NSLayoutConstraint *)centerYConstraint;
 
 @end

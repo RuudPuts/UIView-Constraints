@@ -86,4 +86,30 @@
 	return heightConstraint;
 }
 
+- (NSLayoutConstraint *)centerXConstraint {
+    __block NSLayoutConstraint *centerXConstraint = nil;
+    [self.superview.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop)
+     {
+         if (((constraint.firstItem == self && constraint.firstAttribute == NSLayoutAttributeCenterX) ||
+              (constraint.secondItem == self && constraint.secondAttribute == NSLayoutAttributeCenterX)) &&
+             [constraint class] == [NSLayoutConstraint class]) {
+             centerXConstraint = constraint;
+         }
+     }];
+    return centerXConstraint;
+}
+
+- (NSLayoutConstraint *)centerYConstraint {
+    __block NSLayoutConstraint *centerYConstraint = nil;
+    [self.superview.constraints enumerateObjectsUsingBlock:^(NSLayoutConstraint *constraint, NSUInteger idx, BOOL *stop)
+     {
+         if (((constraint.firstItem == self && constraint.firstAttribute == NSLayoutAttributeCenterY) ||
+              (constraint.secondItem == self && constraint.secondAttribute == NSLayoutAttributeCenterY)) &&
+             [constraint class] == [NSLayoutConstraint class]) {
+             centerYConstraint = constraint;
+         }
+     }];
+    return centerYConstraint;
+}
+
 @end
